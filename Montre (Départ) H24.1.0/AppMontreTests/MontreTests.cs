@@ -198,5 +198,23 @@ namespace ApplicationMontre.Tests
             Assert.AreEqual(0, objMontre.Secondes);
         }
         #endregion
+        #region Tests méthode ObtenirTempsCourant
+        /// <summary>
+        /// Tester la méthode ObtenirTempsCourant
+        /// </summary>
+        [TestMethod]
+        public void ObtenirTempsCourantTest()
+        {
+            // Arranger (Arrange)
+            int heures = 23;
+            int minutes = 47;
+            int secondes = 19;
+            string chaineTest = "23:47:19";
+            Montre objMontre = new Montre(heures, minutes, secondes);
+            // Agir (Act)
+            // Auditer (Assert)
+            Assert.AreEqual(chaineTest, objMontre.ObtenirTempsCourant());
+        }
+        #endregion
     }
 }
