@@ -80,7 +80,7 @@ namespace ApplicationMontre.Tests
         #endregion
         #region Tests constructeur avec paramètres
         /// <summary>
-        /// Tester le constructeur avec des paramètres valide
+        /// Tester le constructeur avec des paramètres valides
         /// </summary>
         [TestMethod]
         public void ConstrAvecParamCasValideRetourValideTest()
@@ -96,6 +96,20 @@ namespace ApplicationMontre.Tests
             Assert.AreEqual(heures, objMontre.Heures);
             Assert.AreEqual(minutes, objMontre.Minutes);
             Assert.AreEqual(secondes, objMontre.Secondes);
+        }
+        /// <summary>
+        /// Tester le constructeur avec des paramètres sous les paramètres minimums
+        /// </summary>
+        [TestMethod]
+        [ExpectedException (typeof(ArgumentOutOfRangeException))]
+        public void ConstrAvecParamCasMinMoinsUnRetourExceptionTest()
+        {
+            // Arranger (Arrange)
+            Montre objMontre = new Montre(-1, -2, -3);
+            // Agir (Act)
+
+            // Auditer (Assert)
+
         }
         #endregion
     }
