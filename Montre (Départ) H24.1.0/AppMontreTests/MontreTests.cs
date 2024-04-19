@@ -35,15 +35,17 @@ namespace ApplicationMontre.Tests
         {
             // Arranger (Arrange)
             Montre objMontre = new Montre();
-            int valeurTest = 5;
             // Agir (Act)
-            objMontre.Heures = valeurTest;
-            objMontre.Minutes = valeurTest;
-            objMontre.Secondes = valeurTest;
+            int heuresTest = 5;
+            int minutesTest = 21;
+            int secontestTest = 12;
+            objMontre.Heures = heuresTest;
+            objMontre.Minutes = minutesTest;
+            objMontre.Secondes = secontestTest;
             // Auditer (Assert)
-            Assert.AreEqual(valeurTest, objMontre.Heures);
-            Assert.AreEqual(valeurTest, objMontre.Minutes);
-            Assert.AreEqual(valeurTest, objMontre.Secondes);
+            Assert.AreEqual(heuresTest, objMontre.Heures);
+            Assert.AreEqual(minutesTest, objMontre.Minutes);
+            Assert.AreEqual(secontestTest, objMontre.Secondes);
         }
         /// <summary>
         /// Tester l'accesseur SET avec des valeurs sous les valeurs minimales
@@ -60,6 +62,7 @@ namespace ApplicationMontre.Tests
             objMontre.Secondes = objMontre.Secondes-1;
             // Auditer (Assert)
         }
+        
         #endregion
     }
 }
