@@ -98,7 +98,7 @@ namespace ApplicationMontre.Tests
             Assert.AreEqual(secondes, objMontre.Secondes);
         }
         /// <summary>
-        /// Tester le constructeur avec des paramètres sous les paramètres minimums
+        /// Tester le constructeur avec des paramètres sous les valeurs minimales
         /// </summary>
         [TestMethod]
         [ExpectedException (typeof(ArgumentOutOfRangeException))]
@@ -112,7 +112,7 @@ namespace ApplicationMontre.Tests
 
         }
         /// <summary>
-        /// Tester le constructeur avec des paramètres au dessus des paramètres maximals
+        /// Tester le constructeur avec des paramètres au dessus des valeurs maximales
         /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
@@ -124,6 +124,22 @@ namespace ApplicationMontre.Tests
 
             // Auditer (Assert)
 
+        }
+        #endregion
+        #region Tests méthode AvancerUneSeconde
+        /// <summary>
+        /// Tester la méthode AvancerUneSeconde avec les paramètres initiaux
+        /// </summary>
+        [TestMethod]
+        public void AvancerUneSecondeCasValideRetourValidePlusUnTest()
+        {
+            // Arranger (Arrange)
+
+            Montre objMontre = new Montre();
+            // Agir (Act)
+            objMontre.AvancerUneSeconde();
+            // Auditer (Assert)
+            Assert.AreEqual(1, objMontre.Secondes);
         }
         #endregion
     }
