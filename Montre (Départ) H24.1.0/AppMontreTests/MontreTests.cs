@@ -45,6 +45,21 @@ namespace ApplicationMontre.Tests
             Assert.AreEqual(valeurTest, objMontre.Minutes);
             Assert.AreEqual(valeurTest, objMontre.Secondes);
         }
+        /// <summary>
+        /// Tester l'accesseur SET avec des valeurs sous les valeurs minimales
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ProprietesSetCasMinRetourExceptionTest()
+        {
+            // Arranger (Arrange)
+            Montre objMontre = new Montre();
+            // Agir (Act)
+            objMontre.Heures = objMontre.Heures-1;
+            objMontre.Minutes = objMontre.Minutes-1;
+            objMontre.Secondes = objMontre.Secondes-1;
+            // Auditer (Assert)
+        }
         #endregion
     }
 }
