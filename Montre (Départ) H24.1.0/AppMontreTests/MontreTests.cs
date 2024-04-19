@@ -62,7 +62,21 @@ namespace ApplicationMontre.Tests
             objMontre.Secondes = objMontre.Secondes-1;
             // Auditer (Assert)
         }
-        
+        /// <summary>
+        /// Tester l'accesseur SET avec des valeurs au dessus des valeurs maximales
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ProprietesSetCasMaxRetourExceptionTest()
+        {
+            // Arranger (Arrange)
+            Montre objMontre = new Montre();
+            // Agir (Act)
+            objMontre.Heures = 24;
+            objMontre.Minutes = 60;
+            objMontre.Secondes = 60;
+            // Auditer (Assert)
+        }
         #endregion
     }
 }
