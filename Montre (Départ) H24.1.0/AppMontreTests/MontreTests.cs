@@ -27,7 +27,24 @@ namespace ApplicationMontre.Tests
             Assert.AreEqual(valeurTest, objMontre.Minutes);
             Assert.AreEqual(valeurTest, objMontre.Secondes);
         }
-
+        /// <summary>
+        /// Tester l'accesseur SET avec des valeurs valides
+        /// </summary>
+        [TestMethod]
+        public void ProprietesSetCasValideRetourValideTest()
+        {
+            // Arranger (Arrange)
+            Montre objMontre = new Montre();
+            int valeurTest = 5;
+            // Agir (Act)
+            objMontre.Heures = valeurTest;
+            objMontre.Minutes = valeurTest;
+            objMontre.Secondes = valeurTest;
+            // Auditer (Assert)
+            Assert.AreEqual(valeurTest, objMontre.Heures);
+            Assert.AreEqual(valeurTest, objMontre.Minutes);
+            Assert.AreEqual(valeurTest, objMontre.Secondes);
+        }
         #endregion
     }
 }
