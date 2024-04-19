@@ -78,5 +78,25 @@ namespace ApplicationMontre.Tests
             // Auditer (Assert)
         }
         #endregion
+        #region Tests constructeur avec paramètres
+        /// <summary>
+        /// Tester le constructeur avec des paramètres valide
+        /// </summary>
+        [TestMethod]
+        public void ConstrAvecParamCasValideRetourValideTest()
+        {
+            // Arranger (Arrange)
+            int heures = 2;
+            int minutes = 23;
+            int secondes = 54;
+            Montre objMontre = new Montre(heures,minutes,secondes);
+            // Agir (Act)
+
+            // Auditer (Assert)
+            Assert.AreEqual(heures, objMontre.Heures);
+            Assert.AreEqual(minutes, objMontre.Minutes);
+            Assert.AreEqual(secondes, objMontre.Secondes);
+        }
+        #endregion
     }
 }
