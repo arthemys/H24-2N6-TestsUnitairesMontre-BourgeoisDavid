@@ -139,8 +139,29 @@ namespace ApplicationMontre.Tests
             // Agir (Act)
             objMontre.AvancerUneSeconde();
             // Auditer (Assert)
+            Assert.AreEqual(0, objMontre.Heures);
+            Assert.AreEqual(0, objMontre.Minutes);
             Assert.AreEqual(1, objMontre.Secondes);
+        }        
+        /// <summary>
+        /// Tester la méthode AvancerUneSeconde avec la limite maximale des secondes
+        /// </summary>
+        [TestMethod]
+        public void AvancerUneSecondeCasMaxSecondesRetourValidePlusUnTest()
+        {
+            // Arranger (Arrange)
+            int heures = 2;
+            int minutes = 39;
+            int secondes = 59;
+            Montre objMontre = new Montre(heures,minutes,secondes);
+            // Agir (Act)
+            objMontre.AvancerUneSeconde();
+            // Auditer (Assert)
+            Assert.AreEqual(heures, objMontre.Heures);
+            Assert.AreEqual(minutes+1, objMontre.Minutes);
+            Assert.AreEqual(0, objMontre.Secondes);
         }
+
         #endregion
     }
 }
