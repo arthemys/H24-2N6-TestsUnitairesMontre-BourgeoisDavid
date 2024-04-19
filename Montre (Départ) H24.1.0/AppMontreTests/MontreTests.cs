@@ -111,6 +111,20 @@ namespace ApplicationMontre.Tests
             // Auditer (Assert)
 
         }
+        /// <summary>
+        /// Tester le constructeur avec des paramètres au dessus des paramètres maximals
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ConstrAvecParamCasMaxPlusUnRetourExceptionTest()
+        {
+            // Arranger (Arrange)
+            Montre objMontre = new Montre(24, 60, 61);
+            // Agir (Act)
+
+            // Auditer (Assert)
+
+        }
         #endregion
     }
 }
